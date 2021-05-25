@@ -80,7 +80,7 @@ unconsciously and regulates bodily functions such as heart rate.
 *“*self-managing distributed computing resources, adapting to
 unpredictable changes while hiding intrinsic complexity from operators
 and users.” We define an *autonomic network* as self-managing
-(self-configuring, selfprotecting, self-healing, self-optimizing) but
+(self-configuring, self-protecting, self-healing, self-optimizing) but
 allowing high-level guidance by a central entity.
 
 *Autonomic Function:* A specific self-managing feature or function.
@@ -88,7 +88,7 @@ allowing high-level guidance by a central entity.
 *Autonomic Service Agent (ASA)*: An agent that implements an autonomic
 function, in part (for a distributed function) or whole.
 
-*Autonomic Node:* A node that embodies autonomic functions
+*Autonomic Node:* A node that embodies autonomic functions.
 
 *Autonomic Control Plane (ACP):* A self-configuring, fully secure,
 virtual network used for all autonomic messaging.
@@ -248,7 +248,7 @@ An Application Programming Interface (API) for GRASP has been
 defined^\[6\]^ and implemented as part of a Python 3 prototype. This
 makes it very easy to implement demonstration ASAs in Python. A partial
 GRASP implementation has also been made as part of an ACP implementation
-in the RUST language.
+in the Rust language.
 
 Talking to the NOC
 ------------------
