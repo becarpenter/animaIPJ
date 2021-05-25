@@ -273,7 +273,7 @@ obtains service information from DNS-SD and redistributes it within the
 ACP, possibly by the GRASP flooding mechanism. For example, the
 information for a service named *syslog* could be flooded in a GRASP
 objective named *SRV.syslog.* Here, the flexibility of CBOR encoding is
-be of great value since a JSON-like representation of service data is
+of great value since a JSON-like representation of service data is
 common.
 
 Extending that point, since GRASP easily allows for JSON (or practically
