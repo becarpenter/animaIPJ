@@ -179,10 +179,10 @@ dependency on any pre-existing data plane (either IPv4 or IPv6), because
 autonomic functions must be able to operate *even if the normal data
 plane and normal routing are broken.* All that is required is for each
 node to create its own IPv6 link-local address on each physical
-interface, as any modern network device does by default. The VRF
-consists of point-to-point IPv6 links and is secured using IPsec (IP
-Security) or DTLS (Datagram Transport Layer Security), both via IKEv2
-(Internet Key Exchange Protocol Version 2). From the viewpoint of
+interface, as any modern network device does by default.
+The VRF consists of point-to-point IPv6 links and is secured using 
+IPsec (IP Security with IKEv2) or DTLS (Datagram Transport Layer Security).
+From the viewpoint of
 autonomic service agents, the ACP uses an automatically generated IPv6
 Unique Local Address prefix, and it uses RPL (Routing Protocol for
 Low-Power and Lossy Networks) internally. Like BRSKI, the ACP bootstraps
