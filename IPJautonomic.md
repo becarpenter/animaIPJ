@@ -172,8 +172,9 @@ BRSKI enrolment. It is best described as a Virtual Routing and
 Forwarding (VRF) instance. It is based on a virtual router at each node,
 consisting of a separate IPv6 forwarding table to which the ACP’s
 virtual interfaces are attached, and an associated IPv6 routing table
-separate from the data plane. Actual packet transmission occurs only as
-IPv6 link-local packets. This choice was made to ensure that there is no
+separate from the data plane.
+Packet transmission is visible only as IPv6 link-local packets, encapsulating the autonomically created overlay network.
+This choice was made to ensure that there is no
 dependency on any pre-existing data plane (either IPv4 or IPv6), because
 autonomic functions must be able to operate *even if the normal data
 plane and normal routing are broken.* All that is required is for each
