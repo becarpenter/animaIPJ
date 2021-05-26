@@ -155,7 +155,7 @@ control plane is bootstrapping a suitable key infrastructure that covers
 all the nodes that will constitute the ACP. This is done by a method
 known as BRSKI (pronounced “Brewski”, Bootstrapping Remote Secure Key
 Infrastructure^\[10\]^). This process uses manufacturer-installed X.509
-certificates, in combination with a manufacturer's authorizing service.
+certificates (802.1AR IDevID), in combination with a manufacturer's authorizing service.
 The network administrator decides which devices are authorized to join
 the network (e.g., by serial number), but relies on the manufacturer to
 validate each device’s certificate whenever the device attempts to join
