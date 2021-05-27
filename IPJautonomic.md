@@ -214,12 +214,13 @@ domain may trust and communicate with each other. GRASP provides
 discovery, flooding, synchronization and negotiation mechanisms for the
 objectives supported by ASAs.
 
-Rather than being a traditional type-length-value protocol, GRASP is
-based on CBOR (Concise Binary Object Representation) messages. This has
-the advantage of allowing very flexible encoding, and GRASP can
-therefore accommodate a very wide range of data types, with the
-possibility of mapping protocol elements directly into various
-high-level language representations.
+Rather than being a traditional type-length-value protocol, GRASP
+messages use CBOR (Concise Binary Object Representation), which
+provides an extensible data model derived from JSON (JavaScript Object
+Notation), but with a simple and efficient binary encoding.
+CBOR's flexibility enables GRASP to accommodate a very wide range of
+data types, with protocol elements often mapping directly
+into various high-level language representations.
 
 The word “objective” has a special meaning in GRASP. It is a data
 structure whose main contents are a *name* and a *value*. An objective
@@ -235,8 +236,9 @@ function or action. They may in principle be anything that can be set to
 a specific logical, numerical, or string value, or a more complex data
 structure. Basically, an objective is defined in the way that best suits
 its application; that is the great advantage of CBOR encoding. If
-desired, for example, an objective’s *value* could be expressed in JSON
-(JavaScript Object Notation). When an objective is shared between ASAs
+desired, for example, an objective’s *value* could be expressed in the
+JSON data model.
+When an objective is shared between ASAs
 by flooding, synchronization or negotiation, each ASA will maintain its
 own copy of the objective and its latest value.
 
@@ -275,10 +277,10 @@ obtains service information from DNS-SD and redistributes it within the
 ACP, possibly by the GRASP flooding mechanism. For example, the
 information for a service named *syslog* could be flooded in a GRASP
 objective named *SRV.syslog.* Here, the flexibility of CBOR encoding is
-of great value since a JSON-like representation of service data is
+of great value since a JSON-like structure of service data is
 common.
 
-Extending that point, since GRASP easily allows for JSON (or practically
+Extending that point, since GRASP easily conveys JSON (or practically
 any other format), it is possible to integrate ASAs communicating via
 GRASP into almost any part of an existing network management system. For
 example, an ASA acting as a NETCONF client could retrieve YANG documents
