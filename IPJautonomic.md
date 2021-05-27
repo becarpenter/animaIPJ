@@ -163,9 +163,9 @@ the network via a local “join proxy”. These proxies all use a single
 “domain registrar” node that mediates the authorizing service. The join
 proxies themselves join the network by the same process; a GRASP
 mechanism is used for joining nodes (known as “pledges”) to find
-proxies, and for proxies to find each other and the registrar. 
+proxies, and for proxies to find each other and the registrar.
 Only the registrar needs to be configured in advance.
-(And future work might eliminate even that)
+(And future work might eliminate even that!)
 
 The ACP forms itself among pledges as soon as they have completed their
 BRSKI enrolment. It is best described as a Virtual Routing and
@@ -180,7 +180,7 @@ autonomic functions must be able to operate *even if the normal data
 plane and normal routing are broken.* All that is required is for each
 node to create its own IPv6 link-local address on each physical
 interface, as any modern network device does by default.
-The VRF consists of point-to-point IPv6 links and is secured using 
+The VRF consists of point-to-point IPv6 links and is secured using
 IPsec (IP Security with IKEv2) or DTLS (Datagram Transport Layer Security).
 From the viewpoint of
 autonomic service agents, the ACP uses an automatically generated IPv6
