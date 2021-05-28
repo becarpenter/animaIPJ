@@ -33,7 +33,7 @@ proprietary methods have to give way to industry standards. This is the
 job of the ANIMA working group.
 
 The goal is self-management of networks, including self-configuration,
-self-optimization, self-healing and self-protection (sometimes called
+self-optimization, self-healing and self-protection (sometimes collectively called
 self-X). Autonomic Networking (AN) puts operational intelligence into
 algorithms at the node level, to minimize dependency on human
 administrators and central management. Nodes capable of AN will discover
@@ -93,7 +93,8 @@ In the metaphor of a network being a car, today’s networks are
 childrens’ pedal cars guided from behind by an attentive parent, whereas
 ANIMA wants them to be like a self-driving taxi.
 
-Nevertheless, the long-term vision for ANIMA is broader than its
+The long-term vision for ANIMA is broader than its
+current set of
 published standards and short-term standardization goals. Much like the
 near term focus for most cars is rapidly improving driver-assist
 systems, the autonomic networking infrastructure (ANI) as defined in the
@@ -136,7 +137,7 @@ below what that does).
 
 Figure 2: An Example Autonomic Network
 
-Befor this seed setup is in place, new routers or switches may be
+Before this seed setup is in place, new routers or switches may be
 physically interconnected, but they won’t do anything. Once they have
 connectivity to a configured registrar, they will automatically form an
 ANI as follows.
@@ -144,7 +145,7 @@ ANI as follows.
 Each new ANI device (at that stage called a “pledge”) will automatically
 obtain a connection with the ANI registrar and attempt to get enrolled
 with an ANI certificate so that it can participate. But the registrar
-needs to prove that it ‘owns’ the ANI device. To do that, the registrar
+needs to prove to the ANI device that it is its ‘owner’. To do that, the registrar
 communicates (for example over the Internet) with the MASA of the vendor
 of that device. That MASA has the information that this pledge is
 actually owned by this registrar’s network and returns a security
@@ -152,9 +153,9 @@ voucher back to the pledge, such that the pledge may now trust the
 registrar. It will therefore accept an ANI certificate from the
 registrar. This process runs completely automatically without any
 further handholding or configuration. It is known as the Bootstrap of
-Remote Key Infrastructures (BRSKI) part of ANI.
+Remote Key Infrastructures (BRSKI^\[10\]^) part of ANI.
 
-Once a new device is enrolled with an ANI certificate it begins to
+Once a new device is enrolled with an ANI certificate, it begins to
 establish a secure Autonomic Control Plane (ACP) connection with all its
 neighbors, authenticated and authorized mutually by the devices’ ANI
 certificates. This too happens without any further handholding or
@@ -162,7 +163,7 @@ configuration.
 
 Assume all devices were physically connected to each other as shown in
 Figure2 and the ANI registrar is connected last (after it was
-configured). Within minutes, all the devices will have run through BSKI,
+configured). Within minutes, all the devices will have run through BRSKI,
 and set up the ACP. As a result, the network operator now has secure IP
 connectivity over the ACP from their management laptop and SDN
 controller to all ANI devices and can configure them manually or through
@@ -231,7 +232,7 @@ unconsciously and regulates bodily functions such as heart rate.
 *“*self-managing distributed computing resources, adapting to
 unpredictable changes while hiding intrinsic complexity from operators
 and users.” We define an *autonomic network* as self-managing
-(self-configuring, selfprotecting, self-healing, self-optimizing) but
+(self-configuring, self-protecting, self-healing, self-optimizing) but
 allowing high-level guidance by a central entity.
 
 *Autonomic Function:* A specific self-managing feature or function.
@@ -239,7 +240,7 @@ allowing high-level guidance by a central entity.
 *Autonomic Service Agent (ASA)*: An agent that implements an autonomic
 function, in part (for a distributed function) or whole.
 
-*Autonomic Node:* A node that embodies autonomic functions
+*Autonomic Node:* A node that embodies autonomic functions.
 
 *Autonomic Control Plane (ACP):* A self-configuring, fully secure,
 virtual network used for all autonomic messaging.
@@ -298,7 +299,7 @@ in RFC8993^\[8\]^.
 
     Figure 3: Layered Model of Network with Autonomic Functions
 
-    Self-confi**g**uring Security
+    Self-configuring Security
     -----------------------------
 
 As mentioned above, ANIMA does not attempt a monolithic bootstrap of a
@@ -407,7 +408,7 @@ An Application Programming Interface (API) for GRASP has been
 defined^\[6\]^ and implemented as part of a Python 3 prototype. This
 makes it very easy to implement demonstration ASAs in Python. A partial
 GRASP implementation has also been made as part of an ACP implementation
-in the RUST language.
+in the Rust language.
 
 Talking to the NOC
 ------------------
@@ -495,7 +496,7 @@ Conclusion
 
 TBD
 
-**Rererences and Further Reading**
+**References and Further Reading**
 ----------------------------------
 
 \[1\] RFC7575, Autonomic Networking: Definitions and Design Goals. M.
@@ -537,5 +538,5 @@ M. Pritikin, M. Richardson, T. Eckert, M. Behringer, K. Watsen. May
 
 THE ANIMA AUTHOR TEAM is a group of participants in the IETF’s ANIMA
 Working Group, including Michael Behringer, Brian E. Carpenter, Toerless
-Eckert, Sheng Jiang, Yizhou Li, Michael Richardson, YOUR NAME HERE. They
+Eckert, Sheng Jiang, Yizhou Li, Michael Richardson, Carsten Bormann, YOUR NAME HERE. They
 may be contacted at anima@ietf.org.
