@@ -155,7 +155,7 @@ control plane is bootstrapping a suitable key infrastructure that covers
 all the nodes that will constitute the ACP. This is done by a method
 known as BRSKI (pronounced “Brewski”, Bootstrapping Remote Secure Key
 Infrastructure^\[10\]^). This process uses manufacturer-installed X.509
-certificates, in combination with a manufacturer's authorizing service.
+certificates (802.1AR IDevID), in combination with a manufacturer's authorizing service.
 The network administrator decides which devices are authorized to join
 the network (e.g., by serial number), but relies on the manufacturer to
 validate each device’s certificate whenever the device attempts to join
@@ -163,24 +163,26 @@ the network via a local “join proxy”. These proxies all use a single
 “domain registrar” node that mediates the authorizing service. The join
 proxies themselves join the network by the same process; a GRASP
 mechanism is used for joining nodes (known as “pledges”) to find
-proxies, and for proxies to find each other and the registrar. Only the
-registrar needs to be configured in advance.
+proxies, and for proxies to find each other and the registrar.
+Only the registrar needs to be configured in advance.
+(And future work might eliminate even that!)
 
 The ACP forms itself among pledges as soon as they have completed their
 BRSKI enrolment. It is best described as a Virtual Routing and
 Forwarding (VRF) instance. It is based on a virtual router at each node,
 consisting of a separate IPv6 forwarding table to which the ACP’s
 virtual interfaces are attached, and an associated IPv6 routing table
-separate from the data plane. Actual packet transmission occurs only as
-IPv6 link-local packets. This choice was made to ensure that there is no
+separate from the data plane.
+Packet transmission is visible only as IPv6 link-local packets, encapsulating the autonomically created overlay network.
+This choice was made to ensure that there is no
 dependency on any pre-existing data plane (either IPv4 or IPv6), because
 autonomic functions must be able to operate *even if the normal data
 plane and normal routing are broken.* All that is required is for each
 node to create its own IPv6 link-local address on each physical
-interface, as any modern network device does by default. The VRF
-consists of point-to-point IPv6 links and is secured using IPsec (IP
-Security) or DTLS (Datagram Transport Layer Security), both via IKEv2
-(Internet Key Exchange Protocol Version 2). From the viewpoint of
+interface, as any modern network device does by default.
+The VRF consists of point-to-point IPv6 links and is secured using
+IPsec (IP Security with IKEv2) or DTLS (Datagram Transport Layer Security).
+From the viewpoint of
 autonomic service agents, the ACP uses an automatically generated IPv6
 Unique Local Address prefix, and it uses RPL (Routing Protocol for
 Low-Power and Lossy Networks) internally. Like BRSKI, the ACP bootstraps
@@ -212,12 +214,13 @@ domain may trust and communicate with each other. GRASP provides
 discovery, flooding, synchronization and negotiation mechanisms for the
 objectives supported by ASAs.
 
-Rather than being a traditional type-length-value protocol, GRASP is
-based on CBOR (Concise Binary Object Representation) messages. This has
-the advantage of allowing very flexible encoding, and GRASP can
-therefore accommodate a very wide range of data types, with the
-possibility of mapping protocol elements directly into various
-high-level language representations.
+Rather than being a traditional type-length-value protocol, GRASP
+messages use CBOR (Concise Binary Object Representation), which
+provides an extensible data model derived from JSON (JavaScript Object
+Notation), but with a simple and efficient binary encoding.
+CBOR's flexibility enables GRASP to accommodate a very wide range of
+data types, with protocol elements often mapping directly
+into various high-level language representations.
 
 The word “objective” has a special meaning in GRASP. It is a data
 structure whose main contents are a *name* and a *value*. An objective
@@ -233,8 +236,9 @@ function or action. They may in principle be anything that can be set to
 a specific logical, numerical, or string value, or a more complex data
 structure. Basically, an objective is defined in the way that best suits
 its application; that is the great advantage of CBOR encoding. If
-desired, for example, an objective’s *value* could be expressed in JSON
-(JavaScript Object Notation). When an objective is shared between ASAs
+desired, for example, an objective’s *value* could be expressed in the
+JSON data model.
+When an objective is shared between ASAs
 by flooding, synchronization or negotiation, each ASA will maintain its
 own copy of the objective and its latest value.
 
@@ -273,10 +277,10 @@ obtains service information from DNS-SD and redistributes it within the
 ACP, possibly by the GRASP flooding mechanism. For example, the
 information for a service named *syslog* could be flooded in a GRASP
 objective named *SRV.syslog.* Here, the flexibility of CBOR encoding is
-of great value since a JSON-like representation of service data is
+of great value since a JSON-like structure of service data is
 common.
 
-Extending that point, since GRASP easily allows for JSON (or practically
+Extending that point, since GRASP easily conveys JSON (or practically
 any other format), it is possible to integrate ASAs communicating via
 GRASP into almost any part of an existing network management system. For
 example, an ASA acting as a NETCONF client could retrieve YANG documents
