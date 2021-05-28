@@ -34,7 +34,7 @@ job of the ANIMA working group.
 
 The goal is self-management of networks, including self-configuration,
 self-optimization, self-healing and self-protection (sometimes collectively called
-self-X). Autonomic Networking (AN) puts operational intelligence into
+*self-X*). Autonomic Networking (AN) puts operational intelligence into
 algorithms at the node level, to minimize dependency on human
 administrators and central management. Nodes capable of AN will discover
 information about the surrounding network and negotiate parameter
@@ -47,8 +47,8 @@ Science fiction? Not really. Distributed routing protocols as introduced
 with the ARPANET in the 1970s and later in the Internet are at their
 core autonomic: self-configuring, self-optimizing, self-healing.
 Examples include OSPF (Open Shortest Path First) and IS-IS (Intermediate
-System to Intermediate System). But over the decades since their
-original deployment, even those protocols have evolved to become
+System to Intermediate System). But over the decades, even those
+protocols have evolved to become
 provisioning monsters requiring the human configuration of “nerd-knob”
 parameters and policies for operators. A whole industry and research
 discipline for network Operations Administration and Management (OAM)
@@ -100,7 +100,7 @@ near term focus for most cars is rapidly improving driver-assist
 systems, the autonomic networking infrastructure (ANI) as defined in the
 recent ANIMA RFCs is intended to provide the foundational building
 blocks. These building blocks are meant to fit seamlessly with existing
-network and SDN/OAM designs and to improve their managerial metrics such
+network and SDN/OAM designs and to improve their metrics such
 as simplicity, reliability and security. Likewise, the ANI allows
 designers to more easily embed automation into network devices whenever
 there is a need. It is worth noting that today, unlike in the past, it
@@ -149,7 +149,8 @@ first needs to prove to the ANI device that it is its ‘owner’. To do that, t
 communicates (for example over the Internet) with the MASA of the vendor
 of that device. That MASA has the information that this pledge is
 actually owned by this registrar’s network and returns a security
-voucher back to the pledge, such that the pledge may now trust the
+voucher that the registrar can present to the pledge, such that the
+pledge may now trust the
 registrar and will therefore accept an ANI certificate from the
 registrar. This process runs completely automatically without any
 further handholding or configuration. It is known as the Bootstrap of
@@ -215,8 +216,8 @@ We now delve into some more technical aspects of the ANIMA solution.
 Terminology
 -----------
 
-According to various dictionaries, there are differences between the
-terms *automatic, autonomous* and *autonomic.*
+Dictionaries differentiate between the
+terms *automatic, autonomous* and *autonomic*:
 
 *Automatic:* as if done by a machine.
 
@@ -535,6 +536,11 @@ Behringer, Ed., S. Bjarnason. May 2021. (DOI: 10.17487/RFC8994)
 \[10\] RFC8995, Bootstrapping Remote Secure Key Infrastructure (BRSKI).
 M. Pritikin, M. Richardson, T. Eckert, M. Behringer, K. Watsen. May
 2021. (DOI: 10.17487/RFC8995)
+
+\[11\] **THE PROMISED SUMMARY OF ANIMA's INCEPTION**
+
+\[12\] **oversight of regulatory entities that publish
+reports of those problems, such as**
 
 THE ANIMA AUTHOR TEAM is a group of participants in the IETF’s ANIMA
 Working Group, including Michael Behringer, Brian E. Carpenter, Toerless
