@@ -15,9 +15,9 @@ inception). This foundation allows the industry to build
 IETF-standardized network solutions for an “Autonomic Networking
 Infrastructure” (ANI) into every network device.
 
-What is this all about? One way to sum it up is “plug and play” for the
-network. This can mean “plug and play for the ISP” or “for the
-enterprise” or “for industrial networks”. This is a significant step
+What is this all about? One way to sum it up is “plug and play” for
+professional networks. This can mean “plug and play for the ISP” or “for
+the enterprise” or “for industrial networks”. This is a significant step
 forward from the well known idea of plug and play for home networks,
 which the IETF addresses in the HOMENET WG.
 
@@ -33,47 +33,46 @@ proprietary methods have to give way to industry standards. This is the
 job of the ANIMA working group.
 
 The goal is self-management of networks, including self-configuration,
-self-optimization, self-healing and self-protection (sometimes collectively called
-*self-X*). Autonomic Networking (AN) puts operational intelligence into
-algorithms at the node level, to minimize dependency on human
-administrators and central management. Nodes capable of AN will discover
-information about the surrounding network and negotiate parameter
-settings with their neighbors and other nodes. Later, nodes may also
-have learning and cognitive capability, i.e. the ability to self-adapt
-their decision-making process based on information and knowledge sensed
-from their environment.
+self-optimization, self-healing and self-protection (sometimes
+collectively called *self-X*). Autonomic Networking (AN) puts
+operational intelligence into algorithms at the node level, to minimize
+dependency on human administrators and central management. Nodes capable
+of AN will discover information about the surrounding network and
+negotiate parameter settings with their neighbors and other nodes.
+Later, nodes may also have learning and cognitive capability, i.e. the
+ability to self-adapt their decision-making process based on information
+and knowledge sensed from their environment.
 
 Science fiction? Not really. Distributed routing protocols as introduced
 with the ARPANET in the 1970s and later in the Internet are at their
 core autonomic: self-configuring, self-optimizing, self-healing.
 Examples include OSPF (Open Shortest Path First) and IS-IS (Intermediate
 System to Intermediate System). But over the decades, even those
-protocols have evolved to become
-provisioning monsters requiring the human configuration of “nerd-knob”
-parameters and policies for operators. A whole industry and research
-discipline for network Operations Administration and Management (OAM)
-evolved to define architectures consisting of an ever more complex
-multitude of layers between the actual intent for the service level
-objectives of the network (and by implication its protocols) and all
-those “magic” parameters that need to be provisioned consistently and
-dynamically into each network device whenever there is any change. (As
-evidence, consider that the IETF alone has published about 50 YANG
-modules, each of which contains sub-modules and many individual
-parameters.)
+protocols have evolved to become provisioning monsters requiring the
+human configuration of “nerd-knob” parameters and policies for
+operators. A whole industry and research discipline for network
+Operations Administration and Management (OAM) evolved to define
+architectures consisting of an ever more complex multitude of layers
+between the actual intent for the service level objectives of the
+network (and by implication its protocols) and all those “magic”
+parameters that need to be provisioned consistently and dynamically into
+each network device whenever there is any change. (As evidence, consider
+that the IETF alone has published more than 120 YANG modules and
+sub-modules, each of which contains many individual parameters.)
 
-In today’s networks, these parameters are almost exclusively implemented
-through a highly complex and most often centralized set of “Software
-Defined Networking” (SDN) controller and orchestrator tools and by human
-operators. These solutions are difficult and expensive to build,
-maintain, validate, predict, secure and above all to make reliable and
-resilient. These problems are rarely seen from the outside, except when
-network services are under oversight of regulatory entities that publish
-reports of those problems, such as^\[12\]^. SDN architectures are also
-highly proprietary, very often from a single vendor, and typically
-require significant customization through programming for any
-multi-vendor network deployment. They therefore require network owners
-to not only hire network operators but also have them become SDN
-developers.
+In today’s networks, routing and traffic-engineering parameters are
+almost exclusively implemented through a highly complex and most often
+centralized set of “Software Defined Networking” (SDN) controller and
+orchestrator tools and by human operators. These solutions are difficult
+and expensive to build, maintain, validate, predict, secure and above
+all to make reliable and resilient. These problems are rarely seen from
+the outside, except when network services are under oversight of
+regulatory entities that publish reports of those problems, such
+as^\[12\]^. SDN architectures are also highly proprietary, very often
+from a single vendor, and typically require significant customization
+through programming for any multi-vendor network deployment. They
+therefore require network owners to not only hire network operators but
+also have them become SDN developers.
 
 Nevertheless, these SDN methods are the best option for existing large
 networks. They are marketed with terms that evolved in the last few
@@ -86,26 +85,17 @@ them to be.
 
 Figure 1: The automobile metaphor
 
-The risk is that this picture is totally outside the IPJ guidelines.
-Great for a slide show, but in case we can’t use it:
-
-In the metaphor of a network being a car, today’s networks are
-childrens’ pedal cars guided from behind by an attentive parent, whereas
-ANIMA wants them to be like a self-driving taxi.
-
-The long-term vision for ANIMA is broader than its
-current set of
-published standards and short-term standardization goals. Much like the
-near term focus for most cars is rapidly improving driver-assist
-systems, the autonomic networking infrastructure (ANI) as defined in the
-recent ANIMA RFCs is intended to provide the foundational building
-blocks. These building blocks are meant to fit seamlessly with existing
-network and SDN/OAM designs and to improve their metrics such
-as simplicity, reliability and security. Likewise, the ANI allows
-designers to more easily embed automation into network devices whenever
-there is a need. It is worth noting that today, unlike in the past, it
-is economic to provide enough computing power in network elements to
-support autonomy.
+The long-term vision for ANIMA is broader than its published standards
+and short-term standardization goals. Much like the near term focus for
+most cars is rapidly improving driver-assist systems, the autonomic
+networking infrastructure (ANI) as defined in the recent ANIMA RFCs is
+intended to provide the foundational building blocks. These building
+blocks are meant to fit seamlessly with existing network and SDN/OAM
+designs and to improve their metrics such as simplicity, reliability and
+security. Likewise, the ANI allows designers to more easily embed
+automation into network devices whenever there is a need. It is worth
+noting that today, unlike in the past, it is economic to provide enough
+computing power in network elements to support autonomy.
 
 What can the Autonomic Networking Infrastructure do for You ?
 -------------------------------------------------------------
@@ -118,8 +108,8 @@ In Figure 2 , an operator wants to deploy a new network of devices
 (routers and switches). The actual reception of the new, factory fresh
 equipment, unpacking and physical attachment is performed in different
 locations by other personnel. The operator only needs to set up an ANI
-seed router, called the ANI registrar (1), for example in a NOC. This
-setup consists of only three simple steps:
+seed router, called the ANI registrar (1), for example in a Network
+Operations Center (NOC). This setup consists of only three simple steps:
 
 \[A\] Set up the router (1) as the registrar and assign a name to the
 ANI.
@@ -130,8 +120,8 @@ or an SDN controller.
 
 \[C\] Register the certificate of the registrar with the Manufacturer
 Authorized Signing Authority (MASA) services of the vendors whose
-routers and switches are being used in the new network (we will see
-below what that does).
+routers and switches are being used in the new network (we will soon see
+what that does).
 
 ![](media/image2.png){width="6.925in" height="3.9034722222222222in"}
 
@@ -143,18 +133,18 @@ connectivity to a configured registrar, they will automatically form an
 ANI as follows.
 
 Each new ANI device (at that stage called a “pledge”) will automatically
-obtain a connection with the ANI registrar and attempt to get
-enrolled, receiving an ANI certificate so that it can participate. But the registrar
-first needs to prove to the ANI device that it is its ‘owner’. To do that, the registrar
-communicates (for example over the Internet) with the MASA of the vendor
-of that device. That MASA has the information that this pledge is
-actually owned by this registrar’s network and returns a security
-voucher that the registrar can present to the pledge, such that the
-pledge may now trust the
-registrar and will therefore accept an ANI certificate from the
-registrar. This process runs completely automatically without any
-further handholding or configuration. It is known as the Bootstrap of
-Remote Key Infrastructures (BRSKI^\[10\]^) part of ANI.
+obtain a connection with the ANI registrar and attempt to get enrolled,
+receiving an ANI certificate so that it can participate. But the
+registrar first needs to prove to the ANI device that it is its ‘owner’.
+To do that, the registrar communicates (for example over the Internet)
+with the MASA of the vendor of that device. That MASA has the
+information that this pledge is actually owned by this registrar’s
+network and returns a security voucher that the registrar can present to
+the pledge, such that the pledge may now trust the registrar and will
+therefore accept an ANI certificate from the registrar. This process
+runs completely automatically without any further handholding or
+configuration. This part of the ANI is known as Bootstrapping Remote
+Secure Key Infrastructure^\[10\]^ (BRSKI, pronounced “Brewski”).
 
 Once a new device is enrolled with an ANI certificate, it begins to
 establish a secure Autonomic Control Plane (ACP) connection with all its
@@ -164,9 +154,9 @@ configuration.
 
 Assume all devices were physically connected to each other as shown in
 Figure2 and the ANI registrar is connected last (after it was
-configured). Within minutes, all the devices will have run through BRSKI,
-and set up the ACP. As a result, the network operator now has secure IP
-connectivity over the ACP from their management laptop and SDN
+configured). Within minutes, all the devices will have run through
+BRSKI, and set up the ACP. As a result, the network operator now has
+secure IP connectivity over the ACP from their management laptop and SDN
 controller to all ANI devices and can configure them manually or through
 SDN automation using this connectivity. Each ANI device has a permanent
 and private IP address within the ANI that does not change, even if the
@@ -200,7 +190,7 @@ get no connectivity whatsoever. As a result, there is never a window of
 opportunity for attackers to attack unprotected equipment. Instead, the
 NOC has all the time it needs to remotely provision the devices. In
 later stages, such provisioning will occur autonomically, as we shall
-see below.
+see.
 
 Compared to many other zero-touch solutions, the ANI does not only focus
 on so-called day-0/day-1 behavior up until the network is operational.
@@ -216,8 +206,8 @@ We now delve into some more technical aspects of the ANIMA solution.
 Terminology
 -----------
 
-Dictionaries differentiate between the
-terms *automatic, autonomous* and *autonomic*:
+Dictionaries differentiate between the terms *automatic, autonomous* and
+*autonomic:*
 
 *Automatic:* as if done by a machine.
 
@@ -300,28 +290,27 @@ in RFC8993^\[8\]^.
 
     Figure 3: Layered Model of Network with Autonomic Functions
 
-    Self-configuring Security
-    -----------------------------
+    Some Details of Self-confi**g**uring Security
+    ---------------------------------------------
 
 As mentioned above, ANIMA does not attempt a monolithic bootstrap of a
 network from a predefined configuration. Instead, it proceeds step by
 step, and security comes first. The first stage of creating a secure
 autonomic control plane is bootstrapping a suitable key infrastructure
-that covers all the nodes that will constitute the ACP. This is done by
-the method known as BRSKI (pronounced “Brewski”, Bootstrapping Remote
-Secure Key Infrastructure^\[10\]^). This process uses
+that covers all the nodes that will constitute the ACP. This is done, as
+previously described, by BRSKI ^\[10\]^. The process uses
 manufacturer-installed X.509 certificates (in IEEE 802.1AR IDevID
-format), in combination with a manufacturer’s authorizing service (MASA). The
-network administrator decides which devices are authorized to join the
-network (e.g., by serial number), but relies on the manufacturer to
-validate each device’s certificate whenever the device attempts to join
-the network via a local “join proxy”. These proxies all use a single
-“domain registrar” node that mediates the authorizing service. The join
-proxies themselves join the network by the same process; a GRASP
-mechanism is used for joining nodes (known as “pledges”) to find
-proxies, and for proxies to find each other and the registrar. Only the
-registrar needs to be configured in advance. (And future work might
-eliminate even that!)
+format), in combination with a manufacturer’s authorizing service
+(MASA). The network administrator decides which devices are authorized
+to join the network (e.g., by serial number), but relies on the
+manufacturer to validate each device’s certificate whenever the device
+attempts to join the network via a local “join proxy”. These proxies all
+use a single “domain registrar” node that mediates the authorizing
+service. The join proxies themselves join the network by the same
+process; a GRASP mechanism is used for joining nodes (known as
+“pledges”) to find proxies, and for proxies to find each other and the
+registrar. Only the registrar needs to be configured in advance. (And
+future work might eliminate even that!)
 
 The ACP forms itself among pledges as soon as they have completed their
 BRSKI enrolment. It is best described as a Virtual Routing and
@@ -537,12 +526,13 @@ Behringer, Ed., S. Bjarnason. May 2021. (DOI: 10.17487/RFC8994)
 M. Pritikin, M. Richardson, T. Eckert, M. Behringer, K. Watsen. May
 2021. (DOI: 10.17487/RFC8995)
 
-\[11\] **THE PROMISED SUMMARY OF ANIMA's INCEPTION**
+\[11\] B. Carpenter, Autonomic Networking, IETF Journal, 2014.
 
-\[12\] **oversight of regulatory entities that publish
-reports of those problems, such as**
+\[12\] FCC, June 15, 2020 T-Mobile Network Outage Report, A Report of
+the Public Safety and Homeland Security Bureau Federal Communications
+Commission, PS Docket No. 20-183, October 2020,
 
 THE ANIMA AUTHOR TEAM is a group of participants in the IETF’s ANIMA
-Working Group, including Michael Behringer, Brian E. Carpenter, Toerless
-Eckert, Sheng Jiang, Yizhou Li, Michael Richardson, Carsten Bormann, YOUR NAME HERE. They
-may be contacted at anima@ietf.org.
+Working Group, including Michael Behringer, Carsten Bormann, Brian E.
+Carpenter, Toerless Eckert, Sheng Jiang, Yizhou Li, Jéferson Campos
+Nobre and Michael Richardson. They may be contacted at anima@ietf.org.
