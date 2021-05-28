@@ -143,14 +143,14 @@ connectivity to a configured registrar, they will automatically form an
 ANI as follows.
 
 Each new ANI device (at that stage called a “pledge”) will automatically
-obtain a connection with the ANI registrar and attempt to get enrolled
-with an ANI certificate so that it can participate. But the registrar
-needs to prove to the ANI device that it is its ‘owner’. To do that, the registrar
+obtain a connection with the ANI registrar and attempt to get
+enrolled, receiving an ANI certificate so that it can participate. But the registrar
+first needs to prove to the ANI device that it is its ‘owner’. To do that, the registrar
 communicates (for example over the Internet) with the MASA of the vendor
 of that device. That MASA has the information that this pledge is
 actually owned by this registrar’s network and returns a security
 voucher back to the pledge, such that the pledge may now trust the
-registrar. It will therefore accept an ANI certificate from the
+registrar and will therefore accept an ANI certificate from the
 registrar. This process runs completely automatically without any
 further handholding or configuration. It is known as the Bootstrap of
 Remote Key Infrastructures (BRSKI^\[10\]^) part of ANI.
@@ -310,7 +310,7 @@ that covers all the nodes that will constitute the ACP. This is done by
 the method known as BRSKI (pronounced “Brewski”, Bootstrapping Remote
 Secure Key Infrastructure^\[10\]^). This process uses
 manufacturer-installed X.509 certificates (in IEEE 802.1AR IDevID
-format), in combination with a manufacturer’s authorizing service. The
+format), in combination with a manufacturer’s authorizing service (MASA). The
 network administrator decides which devices are authorized to join the
 network (e.g., by serial number), but relies on the manufacturer to
 validate each device’s certificate whenever the device attempts to join
