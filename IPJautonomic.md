@@ -98,7 +98,7 @@ noting that today, unlike in the past, it is economic to provide enough
 computing power in network elements to support autonomy.
 
 What can the Autonomic Networking Infrastructure do for You?
--------------------------------------------------------------
+------------------------------------------------------------
 
 Instead of jumping directly into explanation of how the ANI works, let’s
 first give a simple example of what the operator experience of a typical
@@ -524,7 +524,8 @@ Some protocols may not even have security included in the protocol
 itself, for example PIM (Protocol Independent Multicast). Instead,
 packets need to be secured via IPsec security associations (SA). For
 those protocols, the above script would then auto-configure the IPsec SA
-instead of an in-protocol key parameter.
+instead of an in-protocol key parameter. Such scripts are, of course,
+autonomic service agents by another name.
 
 In summary, GRASP with ANI can solve the recurring core problems of
 in-network automation between routers:
@@ -544,25 +545,28 @@ Q: How do I trust these peers?
 A: This trust comes from the ANI certificate used for the ACP.
 
 Q: How do I avoid re-inventing a new protocol to coordinate with my
-peers?
+peers ?
 
 A: This is what GRASP does.
 
-Securing existing protocols is of course just one example where ANIMA
-can be put to immediate use. Many or all
-the benefits apply equally to any other in-network function with similar
-issues: establishing and adjusting QoS and other policies,
-auto-configuring decentralized protocol instances, monitoring, fault
-isolation and troubleshooting, and even auto-configuring the most basic
-user network configuration, such as IP prefix distribution as in the
-previous example.
+Securing existing protocols is only one example where ANIMA can be put
+to immediate use. Many or all the benefits apply equally to any other
+in-network function with similar issues: establishing and adjusting QoS
+and other policies, auto-configuring decentralized protocol instances,
+monitoring, fault isolation and troubleshooting, and even
+auto-configuring the most basic user network configuration, such as IP
+prefix distribution as in the previous example. When completely new
+services are required, ASAs should be developed in languages best suited
+for such a task.
 
 This immediate applicability to real-world problems provides a high
 level of deployment incentive, which will be the basis for ANIMA's
 bright future.
 
-**References and Further Reading**
-----------------------------------
+1.  
+
+    **References and Further Reading**
+    ----------------------------------
 
 \[1\] RFC7575, Autonomic Networking: Definitions and Design Goals. M.
 Behringer, M. Pritikin, S. Bjarnason, A. Clemm, B. Carpenter, S. Jiang,
